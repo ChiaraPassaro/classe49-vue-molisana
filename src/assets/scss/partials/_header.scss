@@ -1,0 +1,19 @@
+
+.nav {
+  @include flex($justify: true, $align: stretch, $wrap: true);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  list-style: none;
+    &-element a {
+      display: block;
+      text-decoration: none;
+      padding: 1em;
+      transition: all 0.6s;
+      &:hover,
+      &:active,
+      &.active {
+        background-color: aqua;
+      }
+    }
+  }

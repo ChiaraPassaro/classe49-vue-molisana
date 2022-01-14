@@ -2,34 +2,38 @@
   <main>
     <div class="container text-center">
       <h1>{{ title }}</h1>
-      <div class="products">
-        <section>
-          <h2>Prodotti più acquistati</h2>
-          <Product 
-                  v-for="(product, index) in products" 
-                  :key="index"
-                  :img="product.src"
-                  :alt="product.titolo"
-                  :titolo="product.titolo"
-                />
-        </section>
-          <section>
-          <h2>Prodotti recenti</h2>
-          <Product 
-                  v-for="(product, index) in productsNew" 
-                  :key="index"
-                  :img="product.src"
-                  :alt="product.titolo"
-                  :titolo="product.titolo"
-                />
-        </section>
-      
-        <!-- <Product 
+
+      <section>
+        <h2>Prodotti più acquistati</h2>
+        <div class="products">
+          <Product
+            v-for="(product, index) in products"
+            :key="index"
+            :img="product.src"
+            :alt="product.titolo"
+            :titolo="product.titolo"
+          />
+        </div>
+      </section>
+      <section>
+        <h2>Prodotti recenti</h2>
+        <div class="products">
+          <Product
+            v-for="(product, index) in productsNew"
+            :key="index"
+            :img="product.src"
+            :alt="product.titolo"
+            :titolo="product.titolo"
+          />
+        </div>
+      </section>
+
+      <!-- <Product 
           v-for="(product, index) in products" 
           :key="index"
           :props="product"
         /> -->
-        <!-- <div 
+      <!-- <div 
           v-for="(product, index) in products" 
           :key="index"
           class="product"
@@ -40,18 +44,17 @@
           >
           <h2>{{ product.titolo }}</h2>
         </div> -->
-      </div>
     </div>
   </main>
 </template>
 
 <script>
-import Product from './Product.vue';
+import Product from "./Product.vue";
 
 export default {
   name: "Main",
   components: {
-    Product
+    Product,
   },
   data() {
     return {
@@ -185,7 +188,6 @@ export default {
           tipo: "corta",
           cottura: 12,
         },
-       
       ],
     };
   },
@@ -203,10 +205,11 @@ main {
     font-size: 2em;
     color: $headingsColor;
   }
-  .products section{
-    display: flex;
-    flex-wrap: wrap;
-  
+  section {
+      .products  {
+        display: flex;
+        flex-wrap: wrap;
+      }
   }
 }
 </style>

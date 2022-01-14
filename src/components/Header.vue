@@ -5,8 +5,16 @@
         src="../assets/img/la-molisana-logo.png"
         alt=""
       >
-      <ul>
-        <li
+      <ul class="nav">
+        <NavElement 
+          v-for="(link, index) in links"
+          :key="index"
+          :class-element="link.current"
+          :href-element="link.url"
+          :text="link.text"
+          class="nav-element"
+        />
+        <!-- <li
           v-for="(link, index) in links"
           :key="index"
           @click="changeActive(index)"
@@ -15,7 +23,7 @@
             :class="(link.current == true) ? 'active' : ''"
             :href="link.url"
           >{{ link.text }}</a>
-        </li>
+        </li> -->
         <!-- <li>
             <a href="">Home</a>
           </li>
@@ -34,8 +42,15 @@
 </template>
 
 <script>
+import NavElement from "./NavElement.vue";
+// import Product from "./Product.vue";
+
+
 export default {
   name: 'Header',
+  components: {
+    NavElement
+  },
   data() { //data e' una funzione che restituisce il nostro object
     return {
       title: "Lorem Ipsum pippo",
@@ -57,6 +72,11 @@ export default {
                 },
                 {
                     text: "Contatti",
+                    url: "#",
+                    current: false,
+                },
+                 {
+                    text: "Dove siamo",
                     url: "#",
                     current: false,
                 },
@@ -84,22 +104,7 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    li a {
-      display: block;
-      text-decoration: none;
-      padding: 1em;
-      transition: all 0.6s;
-      &:hover,
-      &:active,
-      &.active {
-        background-color: aqua;
-      }
-    }
-  }
+<style lang="scss">
+  // @import "../assets/scss/partials/_mixins.scss";
+  // @import "../assets/scss/partials/_header.scss";
 </style>
