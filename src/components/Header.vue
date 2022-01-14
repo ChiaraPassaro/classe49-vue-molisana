@@ -1,12 +1,22 @@
 <template>
   <header>
     <div class="container text-center">
-      <img src="../assets/img/la-molisana-logo.png" alt="">
-        <ul>
-          <li @click="changeActive(index)" v-for="(link, index) in links" :key="index" >
-           <a :class="(link.current == true) ? 'active' : ''" :href="link.url">{{ link.text }}</a>
-          </li>
-          <!-- <li>
+      <img
+        src="../assets/img/la-molisana-logo.png"
+        alt=""
+      >
+      <ul>
+        <li
+          v-for="(link, index) in links"
+          :key="index"
+          @click="changeActive(index)"
+        >
+          <a
+            :class="(link.current == true) ? 'active' : ''"
+            :href="link.url"
+          >{{ link.text }}</a>
+        </li>
+        <!-- <li>
             <a href="">Home</a>
           </li>
           <li>
@@ -18,7 +28,7 @@
           <li>
             <a href="">Contatti</a>
           </li> -->
-        </ul>
+      </ul>
     </div>    
   </header>
 </template>

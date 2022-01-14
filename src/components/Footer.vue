@@ -2,7 +2,11 @@
   <footer>
     <div class="container">
       <div class="col">
-        <img class="logo" src="../assets/img/la-molisana-logo.png" alt="">
+        <img
+          class="logo"
+          src="../assets/img/la-molisana-logo.png"
+          alt=""
+        >
       </div>
       <ul class="col">
         <li><a href="">link</a></li>
